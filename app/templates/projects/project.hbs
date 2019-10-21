@@ -1,0 +1,8 @@
+<LinkTo @route="projects">
+  Back To Projects
+</LinkTo>
+
+<h4 class="mt-2">{{model.name}} #{{this.model.id}}</h4>
+<hr>
+
+<ProjectsList::Item @project={{this.model}} />

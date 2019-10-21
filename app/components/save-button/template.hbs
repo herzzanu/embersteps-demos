@@ -1,0 +1,19 @@
+<button {{on "click" (perform this.save)}} disabled={{this.save.isRunning}} class="btn btn-primary">
+  {{if this.save.isRunning "Saving…" "Save"}}
+</button> 
+
+{{#if this.send.isRunning}}
+  Send again in {{this.timeLeft}} seconds.
+{{else}}
+  <button {{on "click" (perform this.send)}} class="btn btn-primary">
+    Send sms code
+  </button>
+{{/if}}
+
+{{#if this.send.isRunning}}
+  Send again in {{this.timeLeft}} seconds.
+{{else}}
+  <button {{on "click" (perform this.saveAndSend)}} disabled={{this.save.isRunning}} class="btn btn-primary">
+    {{if this.save.isRunning "Sending…" "Send sms code"}}
+  </button>
+{{/if}}

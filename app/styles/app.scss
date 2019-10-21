@@ -1,0 +1,30 @@
+@import "ember-bootstrap/bootstrap";
+
+.main-content {
+  margin-top: 20px;
+}
+
+html,
+body,
+p {
+  font-family: poppins,sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: poppins,sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.flex1 {
+  flex: 1 1 auto;
+  max-width: 300px;
+}
+
+.flex4 {
+  flex: 4 1 auto;
+}
+
+@import "ember-power-select";

@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-md-4">
+    <SelectUser @user={{this.project.user}} @onCreate={{fn this.onCreate}} />
+  </div>
+</div>
+
+<BsModal
+  @open={{this.showModal}}
+  @onHidden={{fn (mut this.showModal) false}} as |modal|>
+  <modal.header>
+    <h4 class="modal-title">
+      New User
+    </h4>
+  </modal.header>
+  <modal.body>
+    <BsForm @formLayout="vertical" @model={{this.newUser}} @onSubmit={{perform this.save}} as |form|>
+      <form.element @label="First Name" @property="firstName" @required={{true}} />
+      <form.element @label="Last Name" @property="lastName" @required={{true}} />
+      <BsButton @defaultText="Create user" @type="primary" @buttonType="submit" @disabled={{this.save.isRunning}} />
+    </BsForm>
+  </modal.body>
+</BsModal>

@@ -1,0 +1,13 @@
+<label>Project owner</label>
+{{!-- template.hbs --}}
+<PowerSelect
+  @options={{this.options}}
+  @selected={{this.user}}
+  @searchField="fullName"
+  @onChange={{fn (mut this.user)}}
+  @afterOptionsComponent={{component "select-user/create" onCreate=(fn this.createUser)}}
+  @onOpen={{fn this.fetchOptions}}
+  as |user|
+>
+  #{{user.id}} {{user.fullName}}
+</PowerSelect>
